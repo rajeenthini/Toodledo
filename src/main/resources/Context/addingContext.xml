@@ -1,0 +1,12 @@
+<template name="addingContext" xmlns="http://ws.apache.org/ns/synapse">
+    <parameter name="contextName" description="Adding-context-toodledo." />
+    <sequence>
+        <property name="uri.var.contextName" expression="$func:contextName" />
+        <call>
+            <endpoint>
+                <http method="post"
+                      uri-template="http://api.toodledo.com/3/contexts/add.php?q={uri.var.contextName}" />
+            </endpoint>
+        </call>
+    </sequence>
+</template>
