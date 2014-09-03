@@ -1,0 +1,17 @@
+<template name="addingFolders" xmlns="http://ws.apache.org/ns/synapse">
+    <!-- Required parameters -->
+    <parameter name="name" description=" A text string up to 32 characters" />
+    <parameter name="private" description="A boolean value (0 or 1) that describes if this folder can be shared. A value of 1 means that this folder is private."
+    <sequence>
+        <property name="uri.var.name" expression="$func:name" />
+        <property name="uri.var.accessToken" expression="$func:accessToken" />
+
+        <property name="messageType" value="application/json" scope="axis2" />
+
+        <call>
+            <endpoint>
+                <http method="post" uri-template="http://api.toodledo.com/3/folders/add.php?name={uri.var.name}&amp;access_token={uri.var.accessToken}" />
+            </endpoint>
+        </call>
+    </sequence>
+</template>

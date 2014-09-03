@@ -1,0 +1,24 @@
+<template name="deletingFolders" xmlns="http://ws.apache.org/ns/synapse">
+    <parameter name="id" description="Unique folder ID to delete." />
+
+    <sequence>
+        <property name="uri.var.id" expression="$func:id" />
+
+        <payloadFactory media-type="xml">
+            <format>
+                <request xmlns="" method="estimate.delete">
+                    <estimate_id>$1</estimate_id>
+                </request>
+            </format>
+            <args>
+                <arg expression="get-property('uri.var.id')" />
+            </args>
+        </payloadFactory>
+
+        <call>
+            <endpoint>
+                <http method="post" uri-template="{uri.var.apiUrl}/api/2.1/xml-in" />
+            </endpoint>
+        </call>
+    </sequence>
+</template>
