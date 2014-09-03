@@ -2,5 +2,6 @@
 <connector>
     <component name="ToodleDo" package="org.wso2.carbon.connector" >
         <dependency component="Context"/>
+        <dependency component="Folders"/>
     </component>
 </connector>

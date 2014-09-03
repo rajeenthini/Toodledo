@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="Folders" type="synapse/template">
+    <subComponents>
+        <component name="addingFolders">
+            <file>addingFolders.xml</file>
+            <description>Add folders to your toodoledo.</description>
+        </component>
+        <component name="retrievingFolders">
+            <file>retrievingFolders.xml</file>
+            <description>Retrieve existing folders in your toodledo.</description>
+        </component>
+        <component name="deletingFolders">
+            <file>deletingFolders.xml</file>
+            <description>Delete existing folders in your toodledo.</description>
+        </component>
+    </subComponents>
+</component>
