@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<connector>
+    <component name="ToodleDo" package="org.wso2.carbon.connector" >
+        <dependency component="Context"/>
+    </component>
+</connector>
